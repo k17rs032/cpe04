@@ -206,6 +206,13 @@
           var currentTime = new Date();
           var time = (currentTime - startTime)/1000;
           $("#time").html("経過時間："+parseInt(time));
+
+          var rest = period - parseInt(time);
+          $("#remain").html("残り時間："+rest);
+          analog(rest);
+          if(rest <= 0){
+            active = false;
+          }
         }
         
     } 
